@@ -4,7 +4,7 @@ sap.ui.define([
 	], function (Controller, History) {
 		"use strict";
 
-		return Controller.extend("ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.BaseController", {
+		return Controller.extend("ca.altalink.gshlyakh.flights_cds.list_report.controller.BaseController", {
 			/**
 			 * Convenience method for accessing the router.
 			 * @public

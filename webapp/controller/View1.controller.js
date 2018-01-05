@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	return Controller.extend("ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.View1", {
+	return Controller.extend("ca.altalink.gshlyakh.flights_cds.list_report.controller.View1", {
 
 	});
 });

@@ -4,7 +4,7 @@ sap.ui.define([
 	], function (BaseController, JSONModel) {
 		"use strict";
 
-		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.App", {
+		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_report.controller.App", {
 
 			onInit : function () {
 				var oViewModel,

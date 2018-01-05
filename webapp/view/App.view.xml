@@ -1,6 +1,6 @@
 <mvc:View
 	xmlns:mvc="sap.ui.core.mvc"
-	controllerName="ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.App"
+	controllerName="ca.altalink.gshlyakh.flights_cds.list_report.controller.App"
 	displayBlock="true"
 	xmlns="sap.m">
 

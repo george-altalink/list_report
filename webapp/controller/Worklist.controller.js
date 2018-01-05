@@ -8,7 +8,7 @@ sap.ui.define([
 	], function (BaseController, JSONModel, History, formatter, Filter, FilterOperator) {
 		"use strict";
 
-		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.Worklist", {
+		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_report.controller.Worklist", {
 
 			formatter: formatter,
 

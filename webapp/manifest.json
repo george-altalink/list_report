@@ -1,7 +1,7 @@
 {
 	"_version": "1.4.0",
 	"sap.app": {
-		"id": "ca.altalink.gshlyakh.flights_cds.list_reportlist_report",
+		"id": "ca.altalink.gshlyakh.flights_cds.list_report",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -42,7 +42,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "ca.altalink.gshlyakh.flights_cds.list_reportlist_report.view.App",
+			"viewName": "ca.altalink.gshlyakh.flights_cds.list_report.view.App",
 			"type": "XML",
 			"id": "app"
 		},
@@ -84,7 +84,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "ca.altalink.gshlyakh.flights_cds.list_reportlist_report.i18n.i18n"
+					"bundleName": "ca.altalink.gshlyakh.flights_cds.list_report.i18n.i18n"
 				}
 			},
 			"": {
@@ -111,7 +111,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "ca.altalink.gshlyakh.flights_cds.list_reportlist_report.view",
+				"viewPath": "ca.altalink.gshlyakh.flights_cds.list_report.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"bypassed": {

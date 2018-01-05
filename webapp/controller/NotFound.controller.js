@@ -3,7 +3,7 @@ sap.ui.define([
 	], function (BaseController) {
 		"use strict";
 
-		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.NotFound", {
+		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_report.controller.NotFound", {
 
 			/**
 			 * Navigates to the worklist when the link is pressed

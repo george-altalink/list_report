@@ -6,7 +6,7 @@ sap.ui.define([
 	], function (UIComponent, Device, models, ErrorHandler) {
 		"use strict";
 
-		return UIComponent.extend("ca.altalink.gshlyakh.flights_cds.list_reportlist_report.Component", {
+		return UIComponent.extend("ca.altalink.gshlyakh.flights_cds.list_report.Component", {
 
 			metadata : {
 				manifest: "json"

@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.NotFound"
+	controllerName="ca.altalink.gshlyakh.flights_cds.list_report.controller.NotFound"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
 

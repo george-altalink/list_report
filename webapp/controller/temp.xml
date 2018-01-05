@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.Worklist"
+	controllerName="ca.altalink.gshlyakh.flights_cds.list_report.controller.Worklist"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.f.semantic"

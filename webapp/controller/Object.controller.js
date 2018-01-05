@@ -12,7 +12,7 @@ sap.ui.define([
 	) {
 		"use strict";
 
-		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.Object", {
+		return BaseController.extend("ca.altalink.gshlyakh.flights_cds.list_report.controller.Object", {
 
 			formatter: formatter,
 
