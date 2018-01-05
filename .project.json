@@ -6,7 +6,8 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true
+    "buildRequired": false,
+    "lastBuildDateTime": "Fri, 05 Jan 2018 22:58:00 GMT"
   },
   "generation": [
     {
@@ -45,5 +46,9 @@
     "mockRequestsFilePath": "",
     "loadJSONFiles": false,
     "loadCustomRequests": false
+  },
+  "deploy": {
+    "destination": "AS2",
+    "name": "z_charts_wlist"
   }
 }
