@@ -11,7 +11,7 @@
 	>
 
 	<!-- test changes for git -->
-	<!-- test changes for git 12 -->
+	<!-- test changes for git 15 -->
 	<viz:VizFrame xmlns="sap.viz" id="idDonutChart" vizType="donut" width="40%" height="30%"
 		vizProperties="{plotArea: { drawingEffect: 'glossy' },title:{ text:'Flight Times'}}">
 		<viz:dataset>
