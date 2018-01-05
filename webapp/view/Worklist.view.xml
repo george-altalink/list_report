@@ -1,151 +1,165 @@
-<mvc:View
-	controllerName="ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.Worklist"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic"
-	xmlns:footerbar="sap.ushell.ui.footerbar"
-	xmlns:viz="sap.viz.ui5.controls"
-	xmlns:vizFeeds="sap.viz.ui5.controls.common.feeds"
-	xmlns:vizData="sap.viz.ui5.data"
-	xmlns:l="sap.ui.commons.layout"	
-	>
-
-	<!-- test changes for git -->
-    <!-- test changes for git 19 -->
-
-	<viz:VizFrame xmlns="sap.viz" id="idDonutChart" vizType="donut" width="40%" height="30%"
-		vizProperties="{plotArea: { drawingEffect: 'glossy' },title:{ text:'Flight Times'}}">
-		<viz:dataset>
-			<vizData:FlattenedDataset data="{/zddl_flights_test5}">
-				<vizData:dimensions>
-					<vizData:DimensionDefinition name="Carrier Name" value="{carrname}"/>
-				</vizData:dimensions>
-				<vizData:measures>
-					<vizData:MeasureDefinition name="Flight Time" value="{fltime}"/>
-				</vizData:measures>
-			</vizData:FlattenedDataset>
-		</viz:dataset>
-		<viz:feeds>
-			<vizFeeds:FeedItem uid="size" type="Measure" values='Flight Time'/>
-			<vizFeeds:FeedItem uid="color" type="Dimension" values="Carrier Name"/>
-		</viz:feeds>
-	</viz:VizFrame>
+<mvc:View	xmlns:mvc="sap.ui.core.mvc" 
+			controllerName="ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.Worklist" 
+			xmlns="sap.suite.ui.commons"
+			xmlns:m="sap.m" 
+			xmlns:chart="sap.chart" 
+			xmlns:data="sap.chart.data" 
+			xmlns:layout="sap.ui.layout"
+			xmlns:viz="sap.viz.ui5.controls"
+			xmlns:vizFeeds="sap.viz.ui5.controls.common.feeds"
+			xmlns:vizData="sap.viz.ui5.data"
+			>
 	
-	<viz:VizFrame xmlns="sap.viz" id="idBarChart" vizType="stacked_bar" width="60%" height="30%"
-		vizProperties="{plotArea: { drawingEffect: 'glossy' },title:{ text:'Seats Availability'}}">
-		<viz:dataset>
-			<vizData:FlattenedDataset data="{/zddl_flights_test5}">
-				<vizData:dimensions>
-					<vizData:DimensionDefinition name="Carrier Name" value="{carrname}"/>
-				</vizData:dimensions>
-				<vizData:measures>
-					<vizData:MeasureDefinition name="Seats Max" value="{seatsmax}"/>
-				</vizData:measures>	
-				<vizData:measures>
-					<vizData:MeasureDefinition name="Seats Max Business" value="{seatsmax_b}"/>
-				</vizData:measures>	
-				<vizData:measures>
-					<vizData:MeasureDefinition name="Seats Max First Class" value="{seatsmax_f}"/>
-				</vizData:measures>					
-			</vizData:FlattenedDataset>
-		</viz:dataset>
-		<viz:feeds>
-			<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Carrier Name"/>
-			<vizFeeds:FeedItem uid="valueAxis" type="Measure" values='Seats Max'/>
-			<vizFeeds:FeedItem uid="valueAxis" type="Measure" values='Seats Max Business'/>
-			<vizFeeds:FeedItem uid="valueAxis" type="Measure" values='Seats Max First Class'/>			
-		</viz:feeds>
-	</viz:VizFrame>						
+    <m:Page showHeader="true" title="Flights Schedule" showFooter="false" showNavButton="false" enableScrolling="false">
+        <m:content>	
+			<layout:Splitter width="100%" height="40%" orientation="Horizontal">
+				<layout:contentAreas>
+					<ChartContainer
+						id="chartContainer"
+						showFullScreen="true"
+						showPersonalization="false"
+						autoAdjustHeight="true"
+						personalizationPress="attachPersonalizationPress"
+						contentChange="attachContentChange"
+						title="Flights Charts">
+						<content>
+							<ChartContainerContent icon="sap-ico://bubble-chart" title="vizFrame Bubble Chart">
+								<content>
+									<viz:VizFrame xmlns="sap.viz" id="idDonutChart" vizType="donut" width="100%" height="100%"
+										vizProperties="{plotArea: { drawingEffect: 'glossy' },title:{ text:'Flight Times'}}">
+										<viz:dataset>
+											<vizData:FlattenedDataset data="{/zddl_flights_test5}">
+												<vizData:dimensions>
+													<vizData:DimensionDefinition name="Carrier Name" value="{carrname}"/>
+												</vizData:dimensions>
+												<vizData:measures>
+													<vizData:MeasureDefinition name="Flight Time" value="{fltime}"/>
+												</vizData:measures>
+											</vizData:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<vizFeeds:FeedItem uid="size" type="Measure" values='Flight Time'/>
+											<vizFeeds:FeedItem uid="color" type="Dimension" values="Carrier Name"/>
+										</viz:feeds>
+									</viz:VizFrame>			
+								</content>
+							</ChartContainerContent>
+						</content>
+					</ChartContainer>
+					
+					<ChartContainer
+						id="chartContainer2"
+						showFullScreen="true"
+						showPersonalization="true"
+						autoAdjustHeight="true"
+						personalizationPress="attachPersonalizationPress"
+						contentChange="attachContentChange"
+						title="Flights Charts">
+						<content>
+							<ChartContainerContent icon="sap-ico://bubble-chart" title="vizFrame Bubble Chart">
+								<content>
+									<viz:VizFrame xmlns="sap.viz" id="idBarChart" vizType="stacked_bar" width="100%" height="100%"
+										vizProperties="{plotArea: { drawingEffect: 'glossy' },title:{ text:'Seats Availability'}}">
+										<viz:dataset>
+											<vizData:FlattenedDataset data="{/zddl_flights_test5}">
+												<vizData:dimensions>
+													<vizData:DimensionDefinition name="Carrier Name" value="{carrname}"/>
+												</vizData:dimensions>
+												<vizData:measures>
+													<vizData:MeasureDefinition name="Seats Max" value="{seatsmax}"/>
+												</vizData:measures>	
+												<vizData:measures>
+													<vizData:MeasureDefinition name="Seats Max Business" value="{seatsmax_b}"/>
+												</vizData:measures>	
+												<vizData:measures>
+													<vizData:MeasureDefinition name="Seats Max First Class" value="{seatsmax_f}"/>
+												</vizData:measures>					
+											</vizData:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Carrier Name"/>
+											<vizFeeds:FeedItem uid="valueAxis" type="Measure" values='Seats Max'/>
+											<vizFeeds:FeedItem uid="valueAxis" type="Measure" values='Seats Max Business'/>
+											<vizFeeds:FeedItem uid="valueAxis" type="Measure" values='Seats Max First Class'/>			
+										</viz:feeds>
+									</viz:VizFrame>			
+								</content>
+							</ChartContainerContent>
+						</content>
+					</ChartContainer>
+					
+				</layout:contentAreas>
+			</layout:Splitter>      
 
-	<semantic:SemanticPage
-		id="page"
-		headerPinnable="false"
-		toggleHeaderOnTitleClick="false">
-
-		<semantic:titleHeading>
-			<Title text="{i18n>worklistTitle}" />
-		</semantic:titleHeading>
-
-		<semantic:content>
-			<Table
-				id="table"
-				width="auto"
-				items="{
-					path: '/zddl_flights_test5',
-					sorter: {
-						path: 'carrid',
-						descending: false
-					}
-				}"
-				noDataText="{worklistView>/tableNoDataText}"
-				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-				growing="true"
-				growingScrollToLoad="true"
-				updateFinished="onUpdateFinished">
-
-				<headerToolbar>
-					<Toolbar>
-						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
-						<ToolbarSpacer />
-						<SearchField
-							id="searchField"
-							tooltip="{i18n>worklistSearchTooltip}"
-							search="onSearch"
-							width="auto">
-						</SearchField>
-					</Toolbar>
-				</headerToolbar>
-
-				<columns>
-					<Column id="carrid" ><Text text="Carrier ID" /></Column>
-					<Column id="carrname" ><Text text="Carrier Name" /></Column>
-					<Column id="connid"><Text text="Connection ID" /></Column>
-					<Column id="flight_type"><Text text="Flight Type" /></Column>
-					<Column id="countryfr" minScreenWidth="Tablet"><Text text="Country From" /></Column>
-					<Column id="cityfrom" minScreenWidth="Tablet"><Text text="City From" /></Column>
-					<Column id="airpfrom" minScreenWidth="Tablet"><Text text="Airport From" /></Column>
-					<Column id="countryto" minScreenWidth="Tablet"><Text text="Coutnry To" /></Column>
-					<Column id="cityto" minScreenWidth="Tablet"><Text text="City To" /></Column>
-					<Column id="airpto" minScreenWidth="Tablet"><Text text="Airport To" /></Column>
-					<Column id="fldate" minScreenWidth="Tablet"><Text text="Flight Date" /></Column>
-					<Column id="fltime" minScreenWidth="Tablet"><Text text="Flight Time" /></Column>
-				</columns>
-
-				<items>
-					<ColumnListItem
-						type="Navigation"
-						press="onPress">
-						<cells>
-							<ObjectIdentifier title="{carrid}" />
-							<Text text="{carrname}" />
-							<Text text="{connid}" />
-							<ObjectHeader icon="{icon}" />
-							<Text text="{countryfr}" />
-							<Text text="{cityfrom}" />
-							<Text text="{airpfrom}" />
-							<Text text="{countryto}" />
-							<Text text="{cityto}" />
-							<Text text="{airpto}" />
-							<Text text="{fldate}" />
-							<Text text="{fltime}" />
-						</cells>
-					</ColumnListItem>
-				</items>
-			</Table>
-		</semantic:content>
-
-		<semantic:sendEmailAction>
-			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
-		</semantic:sendEmailAction>
-
-		<semantic:shareInJamAction>
-			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
-		</semantic:shareInJamAction>
-
-		<semantic:saveAsTileAction>
-			<footerbar:AddBookmarkButton id ="shareTile" title="{worklistView>/saveAsTileTitle}" />
-		</semantic:saveAsTileAction>
-
-	</semantic:SemanticPage>
-
+		    <layout:FixFlex id='chartFixFlex' minFlexSize="250" fixFirst="false" >
+		        <layout:flexContent>
+					<m:Table
+						id="table"
+						width="auto"
+						items="{
+							path: '/zddl_flights_test5',
+							sorter: {
+								path: 'carrid',
+								descending: false
+							}
+						}"
+						noDataText="{worklistView>/tableNoDataText}"
+						busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+						growing="true"
+						growingScrollToLoad="true"
+						updateFinished="onUpdateFinished">
+		
+						<m:headerToolbar>
+							<m:Toolbar>
+								<m:Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+								<m:ToolbarSpacer />
+								<m:SearchField
+									id="searchField"
+									tooltip="{i18n>worklistSearchTooltip}"
+									search="onSearch"
+									width="auto">
+								</m:SearchField>
+							</m:Toolbar>
+						</m:headerToolbar>
+		
+						<m:columns>
+							<m:Column id="carrid" ><m:Text text="Carrier ID" /></m:Column>
+							<m:Column id="carrname" ><m:Text text="Carrier Name" /></m:Column>
+							<m:Column id="connid"><m:Text text="Connection ID" /></m:Column>
+							<m:Column id="flight_type"><m:Text text="Flight Type" /></m:Column>
+							<m:Column id="countryfr" minScreenWidth="Tablet"><m:Text text="Country From" /></m:Column>
+							<m:Column id="cityfrom" minScreenWidth="Tablet"><m:Text text="City From" /></m:Column>
+							<m:Column id="airpfrom" minScreenWidth="Tablet"><m:Text text="Airport From" /></m:Column>
+							<m:Column id="countryto" minScreenWidth="Tablet"><m:Text text="Coutnry To" /></m:Column>
+							<m:Column id="cityto" minScreenWidth="Tablet"><m:Text text="City To" /></m:Column>
+							<m:Column id="airpto" minScreenWidth="Tablet"><m:Text text="Airport To" /></m:Column>
+							<m:Column id="fldate" minScreenWidth="Tablet"><m:Text text="Flight Date" /></m:Column>
+							<m:Column id="fltime" minScreenWidth="Tablet"><m:Text text="Flight Time" /></m:Column>
+						</m:columns>
+		
+						<m:items>
+							<m:ColumnListItem
+								type="Navigation"
+								press="onPress">
+								<m:cells>
+									<m:ObjectIdentifier title="{carrid}" />
+									<m:Text text="{carrname}" />
+									<m:Text text="{connid}" />
+									<m:ObjectHeader icon="{icon}" />
+									<m:Text text="{countryfr}" />
+									<m:Text text="{cityfrom}" />
+									<m:Text text="{airpfrom}" />
+									<m:Text text="{countryto}" />
+									<m:Text text="{cityto}" />
+									<m:Text text="{airpto}" />
+									<m:Text text="{fldate}" />
+									<m:Text text="{fltime}" />
+								</m:cells>
+							</m:ColumnListItem>
+						</m:items>
+					</m:Table>	
+				</layout:flexContent>
+		    </layout:FixFlex>
+		</m:content>
+	</m:Page>
 </mvc:View>

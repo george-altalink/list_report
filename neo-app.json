@@ -1,7 +1,7 @@
 {
   "welcomeFile": "/webapp/index.html",
   "routes": [
-  	{
+    {
       "path": "/AS2",
       "target": {
         "type": "destination",

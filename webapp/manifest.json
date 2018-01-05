@@ -1,6 +1,5 @@
 {
 	"_version": "1.4.0",
-
 	"sap.app": {
 		"id": "ca.altalink.gshlyakh.flights_cds.list_reportlist_report",
 		"type": "application",
@@ -16,12 +15,11 @@
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
-					"localUri" : "localService/metadata.xml"
+					"localUri": "localService/metadata.xml"
 				}
 			}
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -42,38 +40,46 @@
 			"sap_belize"
 		]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "ca.altalink.gshlyakh.flights_cds.list_reportlist_report.view.App",
 			"type": "XML",
 			"id": "app"
 		},
-
 		"dependencies": {
 			"minUI5Version": "1.42.0",
 			"libs": {
-				"sap.ui.core": {
-					"minVersion": "1.42.0"
+				"sap.chart": {
+					"minVersion": ""
+				},
+				"sap.collaboration": {
+					"minVersion": "1.42",
+					"lazy": true
 				},
 				"sap.m": {
 					"minVersion": "1.42.0"
 				},
-				"sap.ushell" : {
+				"sap.suite.ui.commons": {
+					"minVersion": ""
+				},
+				"sap.ui.commons": {
+					"minVersion": ""
+				},
+				"sap.ui.core": {
 					"minVersion": "1.42.0"
 				},
-				"sap.collaboration" : {
-					"minVersion": "1.42",
-					"lazy" : true
+				"sap.ui.layout": {
+					"minVersion": ""
+				},
+				"sap.ushell": {
+					"minVersion": "1.42.0"
 				}
 			}
 		},
-
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
 		},
-
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
@@ -81,7 +87,7 @@
 					"bundleName": "ca.altalink.gshlyakh.flights_cds.list_reportlist_report.i18n.i18n"
 				}
 			},
-			"" : {
+			"": {
 				"dataSource": "mainService",
 				"settings": {
 					"metadataUrlParams": {
@@ -109,24 +115,28 @@
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"bypassed": {
-					"target": ["notFound"]
+					"target": [
+						"notFound"
+					]
 				},
 				"async": true
 			},
-
 			"routes": [
 				{
 					"pattern": "",
 					"name": "worklist",
-					"target": ["worklist"]
+					"target": [
+						"worklist"
+					]
 				},
 				{
 					"pattern": "Objects/{objectId}",
 					"name": "object",
-					"target": ["object"]
+					"target": [
+						"object"
+					]
 				}
 			],
-
 			"targets": {
 				"worklist": {
 					"viewName": "Worklist",
