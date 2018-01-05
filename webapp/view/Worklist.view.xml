@@ -127,17 +127,15 @@
 								</m:headerToolbar>
 				
 								<m:columns>
-									<m:Column id="carrid" ><m:Text text="Carrier ID" /></m:Column>
 									<m:Column id="carrname" ><m:Text text="Carrier Name" /></m:Column>
 									<m:Column id="connid"><m:Text text="Connection ID" /></m:Column>
-									<m:Column id="flight_type"><m:Text text="Flight Type" /></m:Column>
 									<m:Column id="countryfr" minScreenWidth="Tablet"><m:Text text="Country From" /></m:Column>
 									<m:Column id="cityfrom" minScreenWidth="Tablet"><m:Text text="City From" /></m:Column>
 									<m:Column id="airpfrom" minScreenWidth="Tablet"><m:Text text="Airport From" /></m:Column>
 									<m:Column id="countryto" minScreenWidth="Tablet"><m:Text text="Coutnry To" /></m:Column>
 									<m:Column id="cityto" minScreenWidth="Tablet"><m:Text text="City To" /></m:Column>
 									<m:Column id="airpto" minScreenWidth="Tablet"><m:Text text="Airport To" /></m:Column>
-									<m:Column id="fldate" minScreenWidth="Tablet"><m:Text text="Flight Date" /></m:Column>
+									<m:Column id="fldate" minScreenWidth="Tablet" width="100px"><m:Text text="Flight Date" /></m:Column>
 									<m:Column id="fltime" minScreenWidth="Tablet"><m:Text text="Flight Time" /></m:Column>
 								</m:columns>
 				
@@ -146,17 +144,17 @@
 										type="Navigation"
 										press="onPress">
 										<m:cells>
-											<m:ObjectIdentifier title="{carrid}" />
-											<m:Text text="{carrname}" />
+											<m:ObjectIdentifier title="{carrname}" />
 											<m:Text text="{connid}" />
-											<m:ObjectHeader icon="{icon}" />
 											<m:Text text="{countryfr}" />
 											<m:Text text="{cityfrom}" />
 											<m:Text text="{airpfrom}" />
 											<m:Text text="{countryto}" />
 											<m:Text text="{cityto}" />
 											<m:Text text="{airpto}" />
-											<m:Text text="{fldate}" />
+											<m:Text text="{ path 		  : 'fldate', 
+											                type		  : 'sap.ui.model.type.DateTime',
+											                formatOptions : { style : 'medium'} }" />
 											<m:Text text="{fltime}" />
 										</m:cells>
 									</m:ColumnListItem>
