@@ -1,0 +1,59 @@
+<mvc:View
+	controllerName="ca.altalink.gshlyakh.flights_cds.list_reportlist_report.controller.Object"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar">
+
+	<Page id="productDetailsPage" 
+	    title="{carrname}" 
+	    showNavButton ="true" 
+	    navButtonPress="onNavBack"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}"
+		>
+		<headerContent>
+			<Link text="Go to the company's website" href="{url}"></Link>
+	    </headerContent>
+	    <content>
+	    				<ObjectHeader icon="{icon}"></ObjectHeader>
+		<Text text="Flight date: {fldate}" />
+		</content>
+		
+	</Page>
+		
+	<semantic:SemanticPage 
+		id="page"
+		headerPinnable="true"
+		toggleHeaderOnTitleClick="false"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}"
+		showNavButton="true" 
+		>
+
+		<semantic:titleHeading>
+			<Title text="{carrname}" />
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+			<Link text="{url}" href="{url}"></Link>
+			<ObjectHeader icon="{icon}"></ObjectHeader>
+		</semantic:headerContent>
+
+		<Text text="Flight date: {fldate}" />
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id ="shareTile" title="{objectView>/saveAsTileTitle}" />
+		</semantic:saveAsTileAction>
+
+	</semantic:SemanticPage>
+
+</mvc:View>
