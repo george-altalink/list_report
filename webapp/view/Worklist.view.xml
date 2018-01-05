@@ -21,12 +21,15 @@
 						autoAdjustHeight="true"
 						personalizationPress="attachPersonalizationPress"
 						contentChange="attachContentChange"
-						title="Flights Charts">
+						title="Flights Charts"
+						showZoom="false"
+						
+						>
 						<content>
 							<ChartContainerContent icon="sap-ico://bubble-chart" title="vizFrame Bubble Chart">
 								<content>
 									<viz:VizFrame xmlns="sap.viz" id="idDonutChart" vizType="donut" width="100%" height="100%"
-										vizProperties="{plotArea: { drawingEffect: 'glossy' },title:{ text:'Flight Times'}}">
+										vizProperties="{plotArea: { drawingEffect: 'glossy', dataLabel: { visible: 'visible' } },title:{ text:'Flight Times'}}">
 										<viz:dataset>
 											<vizData:FlattenedDataset data="{/zddl_flights_test5}">
 												<vizData:dimensions>
